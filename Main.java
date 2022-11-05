@@ -26,9 +26,6 @@ public class Main {
         userMap.put(1, suzuki);
         userMap.put(2, tanaka);
 
-        //for文で使用するためにMapの大きさを取得するカウンタ
-        int cnt = userMap.size();
-
         //入力用のスキャナーと入力結果取得用の変数
         Scanner sc = new Scanner(System.in);
         String result;
@@ -39,9 +36,9 @@ public class Main {
 
         //Userインスタンスにある名前ならインスタンスで生成したユーザーのデータを表示
         //Userインスタンスに存在しない名前が入力されたら例外処理でthrowされたメッセージを出力する
-        for (int i = 0; i < cnt; i++) {
+        for (User users : userMap.values()) {
             try {
-                System.out.println((userMap.get(i).findUser(result)));
+                System.out.println((users.findUser(result)));
             } catch (Exception e) {
                 e.printStackTrace();
             }
